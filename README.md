@@ -56,8 +56,9 @@ The admin at `/admin` only works after you enable Netlify’s auth and Git Gatew
 ### 3. Open the admin and log in
 
 1. In your browser, go to **https://your-site-name.netlify.app/admin** (use your real site URL).
-2. Click **Sign up** or **Log in** and create an account (or log in). If you used **Invite only**, complete the invite first.
-3. You should see the CMS with **Site Settings**, **Pages**, and **Works** in the sidebar.
+2. (Optional but recommended) So image previews work in the admin, set **site_url** in the repo to your live URL: in `public/admin/config.yml` change `site_url: https://your-site.netlify.app` to your actual URL (e.g. `https://your-site-name.netlify.app`), commit, and push. If you skip this, image previews may show a checkerboard until each deploy finishes.
+3. Click **Sign up** or **Log in** and create an account (or log in). If you used **Invite only**, complete the invite first.
+4. You should see the CMS with **Site Settings**, **Pages**, and **Works** in the sidebar.
 
 ### 4. Edit your site
 
@@ -65,13 +66,14 @@ The admin at `/admin` only works after you enable Netlify’s auth and Git Gatew
 - **Pages** — Edit the About and Contact pages (or add new ones).
 - **Works** — Add new works, upload images, set titles and descriptions, add links, reorder (if you use manual order), and mark some as featured.
 
-**Important:** After you click **Publish**, Netlify will rebuild your site. Wait 1–2 minutes, then refresh your live site to see changes. New or updated works and images only show up after that rebuild.
+**Important:** After you click **Publish**, Netlify will rebuild your site. Wait 1–2 minutes, then refresh your live site to see changes. New or updated works and images only show up after that rebuild. Image previews in the admin may show a gray checkerboard right after upload until that deploy completes; refresh the admin once the deploy is done to see the preview.
 
 ### 5. If something goes wrong
 
 - **Can’t log in at /admin** — Make sure Identity and Git Gateway are both enabled in Netlify, and that you’ve accepted the invite if you use **Invite only**.
 - **Changes don’t appear on the site** — Wait for the latest deploy to finish (check the **Deploys** tab in Netlify). If the deploy failed, open the deploy log and fix any errors (e.g. invalid content).
 - **Admin looks outdated** — Do a hard refresh (Ctrl+Shift+R or Cmd+Shift+R) on the `/admin` page.
+- **Image preview shows a checkerboard in the admin** — The CMS can only show uploaded images after they’re deployed. Right after you upload, wait 1–2 minutes for the deploy to finish, then refresh the admin; the preview should appear. If you open the admin from a deploy preview or a different URL, set **site_url** in `public/admin/config.yml` to your live site URL (e.g. `https://your-site.netlify.app`) so previews load from the correct place.
 
 For more detail (custom domain, deployment options, theme and layout options), see the [Documentation](#documentation) links below.
 

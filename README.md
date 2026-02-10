@@ -74,6 +74,7 @@ The admin at `/admin` only works after you enable Netlify’s auth and Git Gatew
 - **Changes don’t appear on the site** — Wait for the latest deploy to finish (check the **Deploys** tab in Netlify). If the deploy failed, open the deploy log and fix any errors (e.g. invalid content).
 - **Admin looks outdated** — Do a hard refresh (Ctrl+Shift+R or Cmd+Shift+R) on the `/admin` page.
 - **Image preview shows a checkerboard in the admin** — The CMS can only show uploaded images after they’re deployed. Right after you upload, wait 1–2 minutes for the deploy to finish, then refresh the admin; the preview should appear. If you open the admin from a deploy preview or a different URL, set **site_url** in `public/admin/config.yml` to your live site URL (e.g. `https://your-site.netlify.app`) so previews load from the correct place.
+- **Images show “Image unavailable” on the site** — After uploading in the admin, click **Publish** so the new file is committed and Netlify deploys. Wait for the deploy to finish (Deploys tab), then refresh the site. Sample works (e.g. Digital Fragments, Memory Palace) point to images that aren’t in the repo; edit those in the admin and upload real images, or they’ll keep showing the placeholder.
 
 For more detail (custom domain, deployment options, theme and layout options), see the [Documentation](#documentation) links below.
 

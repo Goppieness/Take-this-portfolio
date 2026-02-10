@@ -2,7 +2,12 @@
   command = "npm run build"
   publish = "dist"
 
-# Serve admin UI and its assets (config, etc.) before the SPA catch-all
+# Serve uploads and admin before the SPA catch-all (order matters)
+[[redirects]]
+  from = "/uploads/*"
+  to = "/uploads/:splat"
+  status = 200
+
 [[redirects]]
   from = "/admin"
   to = "/admin/index.html"

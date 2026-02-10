@@ -8,11 +8,11 @@ backend:
     uploadMedia: 'Upload "{{path}}"'
     deleteMedia: 'Delete "{{path}}"'
 
-# Set to your live site URL (e.g. https://yoursite.netlify.app) so image previews
-# in the admin load correctly. Required when opening admin from a deploy preview or before deploy finishes.
-site_url: https://your-site.netlify.app
+# Set to your live site URL (no trailing slash) so image previews load in the admin.
+site_url: https://takethisportfolio.netlify.app
 
-media_folder: public/uploads
+# Uploads go to repo root "uploads/" (build copies them to dist). Avoids path issues some hosts have with "public/".
+media_folder: uploads
 public_folder: /uploads
 
 collections:

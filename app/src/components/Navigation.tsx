@@ -59,6 +59,10 @@ function Navigation() {
               <img
                 src={siteSettings.logoImage}
                 alt={siteSettings.artistName}
+                onError={(e) => {
+                  const el = e.currentTarget
+                  if (el.src !== '/placeholder.svg') el.src = '/placeholder.svg'
+                }}
                 style={{ maxHeight: '36px', width: 'auto', verticalAlign: 'middle' }}
               />
             ) : (

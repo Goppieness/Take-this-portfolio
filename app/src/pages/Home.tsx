@@ -192,6 +192,10 @@ function Home() {
                   <Image
                     src={siteSettings.aboutImage}
                     alt={siteSettings.artistName}
+                    onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
+                      const el = e.currentTarget
+                      if (el.src !== '/placeholder.svg') el.src = '/placeholder.svg'
+                    }}
                     rounded
                     style={{ width: '100%', height: 'auto' }}
                   />

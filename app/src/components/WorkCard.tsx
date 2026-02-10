@@ -1,6 +1,9 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Card, Image } from 'semantic-ui-react'
 import type { Work, ImageAspectRatio } from '../lib/types'
+
+const PLACEHOLDER_IMAGE = '/placeholder.svg'
 
 interface WorkCardProps {
   work: Work
@@ -20,7 +23,9 @@ function getAspectRatioPadding(ratio: ImageAspectRatio | undefined): string {
 }
 
 function WorkCard({ work, imageAspectRatio }: WorkCardProps) {
-  const firstImage = work.media && work.media.length > 0 ? work.media[0] : '/uploads/placeholder.jpg'
+  const [imgError, setImgError] = useState(false)
+  const firstImage = work.media && work.media.length > 0 ? work.media[0] : PLACEHOLDER_IMAGE
+  const src = imgError ? PLACEHOLDER_IMAGE : firstImage
   const paddingBottom = getAspectRatioPadding(imageAspectRatio)
 
   return (
@@ -37,8 +42,9 @@ function WorkCard({ work, imageAspectRatio }: WorkCardProps) {
     >
       <div style={{ position: 'relative', overflow: 'hidden', paddingBottom }}>
         <Image
-          src={firstImage}
+          src={src}
           alt={work.title}
+          onError={() => setImgError(true)}
           style={{ 
             position: 'absolute',
             top: 0,

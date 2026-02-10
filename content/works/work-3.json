@@ -1,0 +1,27 @@
+{
+  "id": "work-3",
+  "title": "Data Stream",
+  "slug": "data-stream",
+  "description": "A generative video work that visualizes the flow of digital information through urban spaces. The piece uses real-time data feeds from various sources to create an ever-changing visual composition.\n\n*Data Stream* reflects on the invisible networks that surround us, making visible the constant flow of information that powers modern cities. The work was created using custom software that processes publicly available data streams and translates them into abstract visual patterns.",
+  "media": [
+    "/uploads/work-3-1.jpg",
+    "/uploads/work-3-2.jpg"
+  ],
+  "tags": ["video", "generative", "digital", "data"],
+  "featured": false,
+  "links": [
+    {
+      "label": "Watch Video",
+      "url": "https://vimeo.com/example",
+      "type": "video",
+      "isPrimary": true
+    },
+    {
+      "label": "Technical Documentation",
+      "url": "https://example.com/docs/data-stream",
+      "type": "external"
+    }
+  ],
+  "date": "2021-11-10"
+}
+

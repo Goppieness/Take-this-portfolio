@@ -1,0 +1,42 @@
+{
+  "siteName": "Alexandra Chen - Visual Artist",
+  "artistName": "Alexandra Chen",
+  "description": "Contemporary visual artist exploring the intersection of digital and traditional media through immersive installations and mixed-media works.",
+  "navigation": [
+    { "label": "Selected Work", "path": "#works" },
+    { "label": "Gallery", "path": "#gallery" },
+    { "label": "About", "path": "#about" },
+    { "label": "Contact", "path": "#contact" }
+  ],
+  "socialLinks": [
+    { "platform": "Instagram", "url": "https://instagram.com/example", "icon": "instagram" },
+    { "platform": "Twitter", "url": "https://twitter.com/example", "icon": "twitter" },
+    { "platform": "LinkedIn", "url": "https://linkedin.com/in/example", "icon": "linkedin" }
+  ],
+  "footer": "© 2024 Alexandra Chen. All rights reserved.",
+  "canonicalUrl": "https://alexandrachen.art",
+  "email": "hello@alexandrachen.art",
+  "favicon": "/favicon/favicon.ico",
+  "ogImage": "/favicon/og-image.png",
+  "ogTitle": "Alexandra Chen - Visual Artist",
+  "ogDescription": "Contemporary visual artist exploring the intersection of digital and traditional media.",
+  "heroBackgroundImage": "/uploads/hero-background.jpg",
+  "heroTitle": "Selected Work",
+  "heroSubtitle": "Multidisciplinary Artist & Creative Director",
+  "aboutImage": "/uploads/about-photo.jpg",
+  "aboutContent": "I am a multidisciplinary artist, creative director, and problem solver based in Los Angeles and New York. My work focuses on creating immersive experiences that blend design, fashion branding, and pop culture influences.\n\nI've had the privilege of collaborating with major brands including ESPN, MTV, American Express, and The Gap. My work has been featured on NBC's \"Making It\" with Amy Poehler and Nick Offerman, The Today Show, Time, and Kawacche.\n\nI studied at the University of Texas at Austin, where I developed my passion for creating bold, visual-first experiences that tell compelling stories.",
+  "contactContent": "I'm always interested in connecting with curators, collectors, and fellow artists. Feel free to reach out for inquiries about available works, exhibition opportunities, or collaborations.",
+  "accentColor": "#2185d0",
+  "fontPairing": "inter-playfair",
+  "themeMode": "light",
+  "homeEmphasis": "featuredWorks",
+  "worksGridDensity": "comfortable",
+  "imageAspectRatio": "original",
+  "useLogoImage": false,
+  "siteTone": "neutral",
+  "primaryLinkStyle": "button",
+  "workOrderMode": "automatic",
+  "heroStatement": "I create immersive experiences at the intersection of design, art, and technology.",
+  "footerLinks": []
+}
+

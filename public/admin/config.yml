@@ -1,0 +1,119 @@
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: 'Create {{collection}} "{{slug}}"'
+    update: 'Update {{collection}} "{{slug}}"'
+    delete: 'Delete {{collection}} "{{slug}}"'
+    uploadMedia: 'Upload "{{path}}"'
+    deleteMedia: 'Delete "{{path}}"'
+
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: "site"
+    label: "Site Settings"
+    files:
+      - label: "Site Settings"
+        name: "site"
+        file: "content/site.json"
+        fields:
+          - { label: "Site Name", name: "siteName", widget: "string", required: true }
+          - { label: "Artist Name", name: "artistName", widget: "string", required: true }
+          - { label: "Description", name: "description", widget: "text", required: true }
+          - { label: "Canonical URL", name: "canonicalUrl", widget: "string", required: true }
+          - { label: "Email", name: "email", widget: "string", required: false }
+          - { label: "Favicon", name: "favicon", widget: "string", required: false }
+          - { label: "OG Image", name: "ogImage", widget: "string", required: false }
+          - { label: "OG Title", name: "ogTitle", widget: "string", required: false }
+          - { label: "OG Description", name: "ogDescription", widget: "string", required: false }
+          - { label: "Hero Background Image", name: "heroBackgroundImage", widget: "image", required: false }
+          - { label: "Hero Title", name: "heroTitle", widget: "string", required: false }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "string", required: false }
+          - { label: "About Image", name: "aboutImage", widget: "image", required: false }
+          - { label: "About Content", name: "aboutContent", widget: "markdown", required: false }
+          - { label: "Contact Content", name: "contactContent", widget: "markdown", required: false }
+          - { label: "Hero Statement", name: "heroStatement", widget: "markdown", required: false, hint: "Short statement shown when Home emphasis is Statement" }
+          - { label: "Accent Color", name: "accentColor", widget: "string", required: true, default: "#2185d0", hint: "Hex color e.g. #2185d0 for CTAs, links, focus" }
+          - { label: "Font Pairing", name: "fontPairing", widget: "select", options: [{ label: "Inter + Playfair Display", value: "inter-playfair" }, { label: "Inter + Merriweather", value: "inter-merriweather" }, { label: "Lora + Source Sans 3", value: "lora-sourcesans" }, { label: "Open Sans + Lato", value: "opensans-lato" }, { label: "Poppins + Open Sans", value: "poppins-opensans" }, { label: "Roboto + Roboto Slab", value: "roboto-slab" }, { label: "Montserrat + Open Sans", value: "montserrat-opensans" }, { label: "Raleway + Lora", value: "raleway-lora" }, { label: "Work Sans + Crimson Pro", value: "worksans-crimson" }, { label: "DM Sans + DM Serif Display", value: "dm-sans-serif" }, { label: "Space Grotesk + Literata", value: "spacegrotesk-literata" }, { label: "Outfit + Fraunces", value: "outfit-fraunces" }, { label: "Manrope + EB Garamond", value: "manrope-garamond" }, { label: "Plus Jakarta Sans + Source Serif 4", value: "jakarta-serif" }, { label: "Sora + IBM Plex Serif", value: "sora-plexserif" }, { label: "System default", value: "system" }], required: false }
+          - { label: "Theme", name: "themeMode", widget: "select", options: [{ label: "Light only", value: "light" }, { label: "Dark only", value: "dark" }, { label: "System preference", value: "system" }], default: "light", required: false }
+          - { label: "Home Page Emphasis", name: "homeEmphasis", widget: "select", options: [{ label: "Featured works", value: "featuredWorks" }, { label: "Statement", value: "statement" }], default: "featuredWorks", required: false }
+          - { label: "Works Grid Density", name: "worksGridDensity", widget: "select", options: [{ label: "Comfortable", value: "comfortable" }, { label: "Compact", value: "compact" }], default: "comfortable", required: false }
+          - { label: "Image Aspect Ratio (grid)", name: "imageAspectRatio", widget: "select", options: [{ label: "Original", value: "original" }, { label: "Forced square", value: "square" }, { label: "Forced 4:5", value: "4-5" }], default: "original", required: false }
+          - { label: "Use logo image", name: "useLogoImage", widget: "boolean", default: false, required: false }
+          - { label: "Logo Image", name: "logoImage", widget: "image", required: false }
+          - { label: "Site Tone", name: "siteTone", widget: "select", options: [{ label: "Neutral", value: "neutral" }, { label: "Formal", value: "formal" }, { label: "Casual", value: "casual" }], default: "neutral", required: false }
+          - { label: "Primary Link Style", name: "primaryLinkStyle", widget: "select", options: [{ label: "Button", value: "button" }, { label: "Text link", value: "text" }], default: "button", required: false }
+          - { label: "Primary Link Default Label", name: "primaryLinkDefaultLabel", widget: "string", required: false, hint: "e.g. View, Learn more, Collect" }
+          - { label: "Work Order Mode", name: "workOrderMode", widget: "select", options: [{ label: "Automatic (newest first)", value: "automatic" }, { label: "Manual (use Order on each work)", value: "manual" }], default: "automatic", required: false }
+          - label: "Navigation"
+            name: "navigation"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string", required: true }
+              - { label: "Path", name: "path", widget: "string", required: true, hint: "Use #section for scroll (e.g. #works, #about, #contact)" }
+              - { label: "Visible", name: "visible", widget: "boolean", default: true, required: false }
+          - label: "Social Links"
+            name: "socialLinks"
+            widget: "list"
+            fields:
+              - { label: "Platform", name: "platform", widget: "string", required: true }
+              - { label: "URL", name: "url", widget: "string", required: true }
+              - { label: "Icon", name: "icon", widget: "string", required: false }
+          - { label: "Footer Text", name: "footer", widget: "string", required: true }
+          - label: "Footer Links"
+            name: "footerLinks"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Label", name: "label", widget: "string", required: true }
+              - { label: "URL", name: "url", widget: "string", required: true }
+
+  - name: "pages"
+    label: "Pages"
+    folder: "content/pages"
+    create: true
+    slug: "{{slug}}"
+    format: "frontmatter"
+    extension: "md"
+    fields:
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Slug", name: "slug", widget: "string", required: true, pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "Lowercase letters, numbers, and dashes only"] }
+      - { label: "Body", name: "body", widget: "markdown", required: true }
+
+  - name: "works"
+    label: "Works"
+    folder: "content/works"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: "id"
+    format: "json"
+    fields:
+      - { label: "ID", name: "id", widget: "string", required: true, pattern: ["^[a-z0-9-]+$", "Lowercase letters, numbers, and dashes only"] }
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Slug", name: "slug", widget: "string", required: true, pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "Lowercase letters, numbers, and dashes only"] }
+      - { label: "Description", name: "description", widget: "markdown", required: true }
+      - label: "Media"
+        name: "media"
+        widget: "list"
+        field: { label: "Image", name: "image", widget: "image", required: true }
+        required: true
+        min: 1
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        field: { label: "Tag", name: "tag", widget: "string" }
+        required: false
+      - { label: "Featured", name: "featured", widget: "boolean", default: false, required: false }
+      - { label: "Order", name: "order", widget: "number", value_type: "int", min: 0, required: false, hint: "For manual sort; lower numbers appear first" }
+      - { label: "Date", name: "date", widget: "datetime", required: false, format: "YYYY-MM-DD" }
+      - label: "Links"
+        name: "links"
+        widget: "list"
+        fields:
+          - { label: "Label", name: "label", widget: "string", required: true }
+          - { label: "URL", name: "url", widget: "string", required: true, pattern: ["^(https?://|mailto:|/).+", "Must be a valid URL starting with http://, https://, mailto:, or /"] }
+          - { label: "Type", name: "type", widget: "select", options: ["external", "marketplace", "press", "video", "other"], required: false }
+          - { label: "Is Primary", name: "isPrimary", widget: "boolean", default: false, required: false }
+

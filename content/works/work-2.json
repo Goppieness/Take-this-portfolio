@@ -1,0 +1,29 @@
+{
+  "id": "work-2",
+  "title": "Memory Palace",
+  "slug": "memory-palace",
+  "description": "An interactive mixed-media work that maps personal memories onto architectural spaces. The piece consists of a series of interconnected rooms, each representing a different period in the artist's life.\n\nVisitors navigate through the installation using a custom-built interface that allows them to explore different memory layers. The work incorporates archival photographs, audio recordings, and 3D-printed objects that serve as memory triggers.\n\n*Memory Palace* was first exhibited at the Museum of Contemporary Art in Los Angeles as part of the \"New Media Perspectives\" group show.",
+  "media": [
+    "/uploads/work-2-1.jpg",
+    "/uploads/work-2-2.jpg",
+    "/uploads/work-2-3.jpg",
+    "/uploads/work-2-4.jpg"
+  ],
+  "tags": ["installation", "mixed-media", "interactive", "memory"],
+  "featured": true,
+  "links": [
+    {
+      "label": "Purchase Inquiry",
+      "url": "mailto:hello@alexandrachen.art?subject=Memory Palace Inquiry",
+      "type": "external",
+      "isPrimary": true
+    },
+    {
+      "label": "Exhibition Info",
+      "url": "https://example.com/exhibitions/new-media-perspectives",
+      "type": "external"
+    }
+  ],
+  "date": "2022-06-20"
+}
+
